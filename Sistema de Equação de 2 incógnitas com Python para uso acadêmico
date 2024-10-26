@@ -1,0 +1,16 @@
+a = float(input('Digite um número a:'))
+b = float(input('Digite um número b:'))
+c = float(input('Digite um número c:'))
+d = float(input('Digite um número d'))
+e = float(input('Digite um número e'))
+f = float(input('Digite um número f'))
+
+D = a*e - b*d
+Dx = c*e - f*b
+Dy = a*f - d*c
+
+x = Dx/D
+y = Dy/D
+
+print('O valor da incógnita x é :' + x)
+print('O valor da incognita y é :' + y)
