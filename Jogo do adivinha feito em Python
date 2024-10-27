@@ -1,0 +1,70 @@
+import random
+jogo = False
+
+print("bem vindo ao jogo do adivinha")
+print("nesse jogo, será sorteado um numero entre 1 a 20 no qual você tera que tentar adivinhar ele.")
+print("serão apenas 5 tentativas.")
+print("quer jogar? (sim/não)")
+r = input("")
+r = r.lower()
+if r == "sim" or 's':
+    jogo = True
+    print("Numero sorteado!")
+    print("Você tem 5 chances.")
+    print("Pode começar")
+    print("obs: apenas numeros são aceitos.")
+    def l():
+        print("Suas tentativas acabaram :(")
+        print(f"o número sorteado era: {n}")
+        print("não desista. na proxima você consegue")
+        return jogo == False
+    ws = False
+
+    n = random.randint(1, 20)
+    chances = 5
+elif r == 'não' or 'n':
+    print("Ok, até a próxima.")
+else:
+    print('só sim ou não')
+    print("quer jogar? (sim/não)")
+    r = input("")
+    r = r.lower()
+def again():
+    if r == "sim" or 's':
+        jogo = True
+        print("Numero sorteado!")
+        print("Você tem 5 chances.")
+        print("Pode começar")
+        print("obs: apenas numeros são aceitos.")
+        ws = False
+        n = random.randint(1, 20)
+        chances = 5
+    else:
+        print("Ok, até a próxima.")
+while jogo == True:
+    t = int(input(""))
+    if t >= 1 and t <= 20:
+        chances = chances - 1
+        print(f"tentativas restantes: {chances}")
+    else:
+        print("o numero so esta entre 1 a 20")
+        print(f"tentativas restantes: {chances}")
+    if t - n <= 3 and t - n > 0:
+        print("Por pouco. Está quente!")
+    elif t - n >= -3 and t - n < 0:
+        print("Por pouco. Está quente!")
+    if chances == 0:
+        l()
+        break  
+    if chances <= 2 and chances > 0:
+        print("restam poucas chances.")
+    if t - n == 0:
+        ws == True
+        print("Parabens, voce acertou!")
+        jogo == False
+        break
+    if chances == 0 and ws == True:
+        print("Parabens, voce acertou!")
+        print("acertou na ultima chance, decisivo você")
+    elif chances == 0 and ws == False:
+        l()
