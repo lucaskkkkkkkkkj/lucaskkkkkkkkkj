@@ -1,0 +1,33 @@
+#Contador de Clique
+
+from tkinter import *
+global contador
+contador = 0
+contadorf = []
+def clique():
+    global contador
+    contador = contador + 1
+    texto2.config(text=str(contador))
+def reset():
+    global contador
+    contador = 0
+    texto2.config(text='0')
+
+janela = Tk()
+janela.title('Contador de Clique')
+janela.config(bg='#444545')
+janela.resizable(width=False, height=False)
+janela.geometry('800x450')
+texto1 = Label(text='Contador de Cliques', width=30, height=3, justify='center', font='Arial', bg='#444545', fg='White')
+texto1.grid(row=0)
+
+clicador = Button(text='Clique Aqui', width=30, height=3, font='Arial', bg='#444545', fg='White', relief='ridge', command=clique)
+clicador.grid(row=1, column=0, padx=275)
+
+texto2 = Label(text=contador, width=30, height=3, justify=CENTER, font='Arial', bg='#444545', fg='White')
+texto2.grid(row=2, column=0, padx=275)
+
+resetador = Button(text='Resetar', width=30, height=3, font='Arial', bg='#444545', fg='White', relief='ridge', command=reset, justify='center')
+resetador.grid(row=3)
+
+janela.mainloop()
